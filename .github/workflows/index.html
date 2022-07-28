@@ -1,0 +1,202 @@
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: Index.HTML(Jim's Cars Homepage)   -->
+<!--       Created by: Vishwa Mohandoss           -->
+<!--       Created on: 18-October-2021            -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title> Jim's Cars Homepage </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://jimscars.z13.web.core.windows.net/myicon.ico">
+<head>
+<body>
+  <style>
+    body {
+      background-image: url("images/BG/mybg.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+  </style>
+
+  <div class="navbar">
+    <a <i class="fas fa-car-side fa-spin fa-3x" style="size:69px;color:lightblue;"></i></a>
+    <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="https://www.newcastle.edu.au/singapore/future-students"><i class="fa fa-search"></i>CourseURL</a>
+    <a href="privacy_policy.html"><i class="fas fa-cloud"></i>Privacy Policy</a>
+    <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="feedback.html"><i class="fa fa-comments-o"></i> Feedback</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+    <div>
+      <!-- start clock part here... -->
+
+      <div style="text-align: right; color:white;">
+
+        <head>
+          <span>
+        </head>
+
+        <body onload="initClock()">
+
+          <!--digital clock start-->
+          <div class="datetime">
+            <div class="date">
+              <span id="dayname">Day</span>,
+              <span id="month">Month</span>
+              <span id="daynum">00</span>,
+              <span id="year">Year</span>
+            </div>
+            <div class="time">
+              <span id="hour">00</span>:
+              <span id="minutes">00</span>:
+              <span id="seconds">00</span>
+              <span id="period">AM</span>
+            </div>
+          </div>
+          <!--digital clock end-->
+
+          <script type="text/javascript">
+            function updateClock() {
+              var now = new Date();
+              var dname = now.getDay(),
+                mo = now.getMonth(),
+                dnum = now.getDate(),
+                yr = now.getFullYear(),
+                hou = now.getHours(),
+                min = now.getMinutes(),
+                sec = now.getSeconds(),
+                pe = "AM";
+
+              if (hou >= 12) {
+                pe = "PM";
+              }
+              if (hou == 0) {
+                hou = 12;
+              }
+              if (hou > 12) {
+                hou = hou - 12;
+              }
+
+              Number.prototype.pad = function (digits) {
+                for (var n = this.toString(); n.length < digits; n = 0 + n);
+                return n;
+              }
+
+              var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+              var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+              var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+              var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+              for (var i = 0; i < ids.length; i++)
+                document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+            }
+
+            function initClock() {
+              updateClock();
+              window.setInterval("updateClock()", 1000);
+            }
+          </script>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+<body>
+  <h3> Welcome <b><span id="result"></span></b> !!! </h3>
+  <h1> Jim's Cars</h1>
+  <script>
+    document.getElementById("result").innerHTML = localStorage.getItem("textvalue");
+  </script>
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L78SR6FFT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L78SR6FFT');
+</script>
+
+
+<body>
+  <strong>
+    <h2>Categories of Car</h2>
+    <b><a href="luxury_cars.xml">* Luxury Cars</a> <br> <br>
+      <!-- <img src="images/luxury_cars/Mercedes_Benz_car.jpg" alt="Mercedes_Benz_car" width="300" height="400"> -->
+
+      <a href="family_cars.xml">* Family Cars</a> <br>
+  </strong> </b>
+  <!-- <img src="images/family cars/toyota_corolla_altis.jpg" alt="toyota_corolla_altis"  width="250" height="350"> -->
+  <div class="main_div">
+
+    <p>Our Approach each customer with the idea of helping him or her to solve a problem or
+      achieve a goal, not of selling a product or service. Our definition of ‘innovative’ is providing value to the
+      customer.We are Always be 100% honest.Be happy with as a customer. </p>
+    <hr>
+
+
+
+    <div class="main_div">
+      <ul id="luxury_cars">
+        <li class="page-title">Mercedes-Benz</li>
+        <p>The changes to the refreshed C-Class are only limited to cosmetics which include a revised front grille and
+          bumpers. The grille can now also be had in the diamond radiator grille with chrome pins instead of the
+          standard dual-louvred one. The bumpers get an AMG-like design with larger
+          intakes and a sporty bumper lip. The headlight signature is redesigned, but if you upgrade it to LED High
+          Performance ones offered by Mercedes, you get the multiple LEDs with subtle DRL in between which looks simply
+          stunning. </p>
+        <div>
+          <img src="images/luxury_cars/Mercedes_Benz_car.jpg" class="Mercedes_Benz_car" />
+        </div>
+      </ul>
+    </div>
+    <hr>
+    <div class="main_div">
+      <ul id="family_cars">
+        <li class="page-title"> Toyota Corolla Altis</li>
+        <p>The Toyota Corolla Altis has 1 Diesel Engine and 1 Petrol Engine on offer. The Diesel engine is 1364 cc while
+          the Petrol engine is 1798 cc .
+          The Corolla Altis is a 5 seater 4 cylinder car and has length of 4620mm, width of 1775mm and a wheelbase of
+          2700mm.</p>
+        <div>
+          <img src="images/family cars/toyota_corolla_altis.jpg" class="toyota_corolla_altis" />
+        </div>
+      </ul>
+    </div>
+    <hr>
+    <div class="main_div">
+      <ul id="luxury_cars">
+        <li class="page-title">Land Rover</li>
+        <p>The Range Rover is the most luxurious SUV built by Land Rover and is the flagship of their SVO line-up as
+          well.
+          This is the mid-life MY2018 upgrade for the Range Rover which was launched back in 2015.</p>
+        <div>
+          <img src="images/luxury_cars/Land_Rover_Range_Rover.jpg" class="Land_Rover_Range_Rover" />
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+  <div id="copyright">
+    Copyright 2021 &copy; Vishwa Mohandoss
+    <a href="mailto:C3393323@uon.edu.au">C3393323@uon.edu.au</a></p>
+  </div>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- file name: Index.HTML(Jim's Cars Homepage)   -->
+  <!--        Completed by: Vishwa Mohandoss        -->
+  <!--        Completed on: 29-October-2021         -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</body>

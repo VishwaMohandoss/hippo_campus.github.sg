@@ -1,0 +1,256 @@
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: FEEDBACK.HTML(for get feedback)   -->
+<!--            Created by: Vishwa Mohandoss      -->
+<!--            Created on: 22-October-2021       -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title> Jim's Cars Feedback </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://jimscars.z13.web.core.windows.net/myicon.ico">
+
+<body>
+
+  <style>
+    body {
+      background-image: url("images/BG/mybg.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+  </style>
+
+  <div class="navbar">
+    <a <i class="fas fa-car-side fa-spin fa-3x" style="size:69px;color:lightblue;"></i></a>
+    <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="https://www.newcastle.edu.au/singapore/future-students"><i class="fa fa-search"></i>CourseURL</a>
+    <a href="privacy_policy.html"><i class="fas fa-cloud"></i>Privacy Policy</a>
+    <a href="contact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a class="active" href="feedback.html"><i class="fa fa-comments-o"></i> Feedback</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Login</a>
+    <!-- start clock part here... -->
+
+    <div style="text-align: right;">
+
+      <head>
+        <span>
+      </head>
+
+      <body onload="initClock()">
+
+        <!--digital clock start-->
+        <div class="datetime">
+          <div class="date">
+            <span id="dayname">Day</span>,
+            <span id="month">Month</span>
+            <span id="daynum">00</span>,
+            <span id="year">Year</span>
+          </div>
+          <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+          </div>
+        </div>
+        <!--digital clock end-->
+
+        <script type="text/javascript">
+          function updateClock() {
+            var now = new Date();
+            var dname = now.getDay(),
+              mo = now.getMonth(),
+              dnum = now.getDate(),
+              yr = now.getFullYear(),
+              hou = now.getHours(),
+              min = now.getMinutes(),
+              sec = now.getSeconds(),
+              pe = "AM";
+
+            if (hou >= 12) {
+              pe = "PM";
+            }
+            if (hou == 0) {
+              hou = 12;
+            }
+            if (hou > 12) {
+              hou = hou - 12;
+            }
+
+            Number.prototype.pad = function (digits) {
+              for (var n = this.toString(); n.length < digits; n = 0 + n);
+              return n;
+            }
+
+            var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+            var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+            for (var i = 0; i < ids.length; i++)
+              document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+          }
+
+          function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1000);
+          }
+        </script>
+    </div>
+  </div>
+
+</body>
+</head>
+
+<body>
+  <h1> Jim's Cars</h1>
+  <style>
+    h1 {
+      color: blue;
+      text-align: center;
+    }
+
+    #container {
+      font-size: larger;
+    }
+
+    form div {
+      margin-bottom: 1em;
+    }
+  </style>
+
+  <script>
+    function checkNameGender() {
+      x = document.easyform.FirstName.value
+      y = document.easyform.LastName.value
+      if (x == "") {
+        alert("name is mandatory!");
+        return false;
+      } else if (y == "") {
+        alert("LastName is mandatory");
+        return false;
+      } else {
+        alert("Thank you, " + x, + y);
+        return true;
+      }
+
+      // checkbox for holiday
+      a = document.easyform.holiday[0].checked;
+      b = document.easyform.holiday[1].checked;
+      if ((!a && !b) || ((a && b) || (b && a))) {
+        alert("Please select only one checkbox");
+        return false;
+      }
+
+      //radiobutton for gender
+      a = document.easyform.gender[0].checked;
+      b = document.easyform.gender[1].checked;
+      if ((a == false) && (b == false)) {
+        alert("please choose your gender");
+        return false;
+      } _
+
+    }
+    function check_Email(mail) {
+      var regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+      if (regex.test(mail.emailaddress.value)) {
+        return true;
+        alert("Congrats! This is a valid Email email");
+      }
+      else {
+        alert("This is not a valid email address");
+        return false;
+      }
+    }
+
+
+
+
+  </script>
+
+  </head>
+
+  <div id="container">
+    <h1>Provide a Feedback<h1>
+        <hr>
+        <h2>Personal Details</h2>
+        <form action="index.html">
+          <input type="hidden">
+          <div>
+            <label for="FirstName">Enter FirstName *</label><br>
+            <input type="text" name="FirstName" id="FirstName">
+          </div>
+          <div>
+            <label for="LastName">Enter LastName *</label><br>
+            <input type="text" name="LastName" id="LastName">
+          </div>
+          <div>
+            <label for="email address">Enter email adress* </label><br>
+            <input type="text" name="email address" id="email address">
+          </div>
+          <div>
+            <div>Gender*
+              <div id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="male" id="male">
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">Female</label>
+              </div>
+              <div>
+                <label for="previous cars">How many cars have you bought from us?</label><br>
+                <input type="text" name="previous cars" id="previous cars">
+              </div>
+              <div>Do you use a car now?
+                <div id="cars">
+                  <label for="yes">Yes</label>
+                  <input type="checkbox" name="cars" value="Yes" id="Yes">
+                  <label for="No">No</label>
+                  <input type="checkbox" name="cars" value="No" id="No">
+                </div>
+
+                <head>
+                  <!-- Font Awesome Icon Library -->
+                  <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                  <style>
+                    .checked {
+                      color: orange;
+                    }
+                  </style>
+                </head>
+
+                <body>
+
+                  <div>Please Rate us...
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                </body>
+                <div><input type="Submit" value="click here to submit" onclick="checkNameGender">
+        </form>
+  </div>
+</body>
+
+</html>
+<hr>
+<div id="copyright">
+  Copyright 2021 &copy; Vishwa Mohandoss
+  <a href="mailto:C3393323@uon.edu.au">C3393323@uon.edu.au</a></p>
+</div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: FEEDBACK.HTML(for get feedback)           -->
+<!--           Completed by: Vishwa Mohandoss             -->
+<!--           Completed on: 29-October-2021              -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
