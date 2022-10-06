@@ -1,0 +1,113 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* file name: STYLE.CSS(Jim's Cars Homepage)   */
+/*        Created by: Vishwa Mohandoss         */
+/*        Created on: 24-October-2021          */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+<!-- Start style part of bgimage--> 
+    .body {
+      background-image: url('images/BG/rolls_royce_luxury_car_BG.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin-left: 1cm;
+      background-size: cover; 
+      background-size: 100% 100%;
+      background-color:powderblue;	  
+    
+    } 
+    h1   {color: blue;text-shadow:2px 2px red;font-style: italic;text-align:center;text-transform: uppercase;}
+    h2   {color: blue;text-shadow:5px 5px 10px blue;text-transform: uppercase;font-style: oblique; }
+    h3   {color: blue;text-shadow:5px 5px 10px blue}
+    h4   {color: yellow;text-shadow:2px 2px red;}
+    h5   {color: blue; text-shadow:5px 5px 10px red;}
+    p    {color: blue;}
+	
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#copyright {
+	float: right;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: right;
+	bottom: 0px;
+	width: auto;
+}
+
+.Mercedes_Benz_car{
+		    border: 6px;
+	        border-color: brown;
+	        border-style: dotted; 
+		    width: 300px;
+	}
+	.toyota_corolla_altis{
+		    border: 6px;
+	        border-color: green;
+	        border-style: dotted; 
+		    width: 300px;
+	}
+	.Land_Rover_Range_Rover{ border: 6px;
+	       border-color: yellow;
+	       border-style: dotted; 
+		   width: 300px;
+	} 
+
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+  font-size:30px;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}
+
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+
+
+
+
+ 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* file name: STYLE.CSS(Jim's Cars Homepage)    */
+/*        Completed by: Vishwa Mohandoss        */
+/*        Completed on: 29-October-2021         */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

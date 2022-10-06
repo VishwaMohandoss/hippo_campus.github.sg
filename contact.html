@@ -1,0 +1,162 @@
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: contact.HTML(freshman_toolkit Contact)   -->
+<!--       Created by: Vishwa Mohandoss           -->
+<!--       Created on: 18-September-2021            -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- document type definition for luxurycars XML starts here-->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title> freshman_toolkit Contact </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://freshman.z13.web.core.windows.net/uonicon.ico">
+
+<body>
+
+  <style>
+    body {
+      background-image: url("images/BG/mybg.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+  </style>
+
+  <div class="navbar">
+    <a <i class="fas fa-car-side fa-spin fa-3x" style="size:69px;color:lightblue;"></i></a>
+    <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="https://www.newcastle.edu.au/singapore/future-students"><i class="fa fa-search"></i>OUR UNI</a>
+    <a href="privacy_policy.html"><i class="fas fa-cloud"></i>CAMPUS LIFE</a>
+    <a class="active" href="contact.html"><i class="fa fa-fw fa-envelope"></i> FRESHIE GUIDE</a>
+    <a href="feedback.html"><i class="fa fa-comments-o"></i> Contact US </a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Admin Login</a>
+    <!-- start clock part here... -->
+
+    <div style="text-align: right;">
+
+      <head>
+        <span>
+      </head>
+
+      <body onload="initClock()">
+
+        <!--digital clock start-->
+        <div class="datetime">
+          <div class="date">
+            <span id="dayname">Day</span>,
+            <span id="month">Month</span>
+            <span id="daynum">00</span>,
+            <span id="year">Year</span>
+          </div>
+          <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+          </div>
+        </div>
+        <!--digital clock end-->
+
+        <script type="text/javascript">
+          function updateClock() {
+            var now = new Date();
+            var dname = now.getDay(),
+              mo = now.getMonth(),
+              dnum = now.getDate(),
+              yr = now.getFullYear(),
+              hou = now.getHours(),
+              min = now.getMinutes(),
+              sec = now.getSeconds(),
+              pe = "AM";
+
+            if (hou >= 12) {
+              pe = "PM";
+            }
+            if (hou == 0) {
+              hou = 12;
+            }
+            if (hou > 12) {
+              hou = hou - 12;
+            }
+
+            Number.prototype.pad = function (digits) {
+              for (var n = this.toString(); n.length < digits; n = 0 + n);
+              return n;
+            }
+
+            var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "September", "November", "December"];
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+            var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+            for (var i = 0; i < ids.length; i++)
+              document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+          }
+
+          function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1000);
+          }
+        </script>
+    </div>
+  </div>
+
+</body>
+</head>
+
+<body>
+  <h3> Respectable <b><span id="result"></span></b> !!! </h3>
+  <h1> freshman_toolkit</h1>
+  <script>
+    document.getElementById("result").innerHTML = localStorage.getItem("textvalue");
+  </script>
+
+  <h2> We welcome your comments, suggestions and questions: </h2>
+  <p><a class="ref_email">Address :</a> UON IT team, <br>123 Prize Lane, Kirwan, SG</p>
+  <p><a class="ref_email">mail : </a> UONITteam@gamil.com</p>
+  <p><a class="ref_email">Contacts: </a> 0455 4343 555</p>
+
+
+
+  <br>
+  <h5><b>
+      <center> THIS SITE IS LINKED WITH GOOGLE RECAPTCHA AND GOOGLE ANALYTICS... &#128512;<br> SIR IF YOU WANT OUR
+        ANALYTICS INFORMATION THEN SEND EMAIL <br> <a
+          href="mailto:vishwamohandoss0@gmail.com">VISHWAMOHANDOSS0@GMAIL.COM</a> </center>
+    </b></h5>
+  <br>
+  <hr>
+  <h4><b>
+      <center> I AM TRYING TO IMPROVE THIS SITE AS SOON AS POSSIBLE ... <br> I HOPE THIS IS GOOD EXPERIENCE TO
+        YOU...<br> THANKS FOR VISITING AS... <br> BY VISHWA MOHANDOSS
+    </b> </center>
+  </h4>
+  <hr>
+  <br>
+  <img src="images/programming.gif" alt="Computer man" style="width:150px;height: 150px;">
+  </b>
+
+</body>
+<hr>
+<div id="copyright">
+  Copyright 2022 &copy; Vishwa Mohandoss
+  <a href="mailto:C3393323@uon.edu.au">C3393323@uon.edu.au</a></p>
+</div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: contact.HTML(freshman_toolkit Contact)   -->
+<!--        Completed by: Vishwa Mohandoss        -->
+<!--        Completed on: 29-September-2021         -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
