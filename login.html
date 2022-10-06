@@ -1,0 +1,262 @@
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: login.HTML(freshman_toolkit Admin Login)            -->
+<!--                Created by: Vishwa Mohandoss            -->
+<!--               Created on: 22-September-2021              -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script type="text/javascript">
+    var onloadCallback = function () {
+      grecaptcha.render('html_element', {
+        'sitekey': '6LfQWVsiAAAAAHT7k7tDfyZrhvCSfBZahkgMjteG'
+      });
+    };
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EEG4N551Q8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EEG4N551Q8');
+</script>
+  <script type="text/javascript">
+    var verifyCallback = function (response) {
+      alert(response);
+    };
+    var widgetId1;
+    var widgetId2;
+    var onloadCallback = function () {
+      // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+      // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+      widgetId1 = grecaptcha.render('example1', {
+        'sitekey': '6LfQWVsiAAAAAHT7k7tDfyZrhvCSfBZahkgMjteG',
+        'theme': 'light'
+      });
+      widgetId2 = grecaptcha.render(document.getElementById('example2'), {
+        'sitekey': '6LfQWVsiAAAAAHT7k7tDfyZrhvCSfBZahkgMjteG'
+      });
+    };
+  </script>
+
+  <script>
+    function passvalues() {
+      var Firstname = document.getElementById("uname").value;
+      localStorage.setItem("textvalue", Firstname);
+      return false;
+    }
+  </script>
+
+  <title>Admin Login for freshman_toolkit</title>
+  <link rel="shortcut icon" href="https://freshman.z13.web.core.windows.net/uonicon.ico">
+
+  <style>
+    body {
+      background-image: url("images/BG/UON_log_in_BG.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    form {
+      margin-left: auto;
+      margin-right: auto;
+      height: fit-content;
+      width: fit-content;
+      border: 3px solid #8a7e7e;
+    }
+
+    label{ 
+      color: whitesmoke;}
+
+    input[type=text],
+    input[type=password] {
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+      width: 20%;
+      border-radius: 30%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+    
+
+
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+      display: none;
+      background: LightGray;
+      color: #000;
+      position: relative;
+      padding: auto;
+      margin-top: auto;
+    }
+
+    #message p {
+      padding: 10px 35px;
+      font-size: 18px;
+    }
+
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+      color: green;
+    }
+
+    .valid:before {
+      position: relative;
+      left: -35px;
+      content: "😍 YOU GOT IT!";
+    }
+
+    /* Add a red text color and an "x" when the requirements are wrong */
+    .invalid {
+      color: red;
+    }
+
+    .invalid:before {
+      position: relative;
+      left: -35px;
+      content: "😨 OOPS SORRY!";
+    }
+  </style>
+</head>
+
+<body>
+
+  <br><br><br>
+  <form action="index.html">
+    <div class="imgcontainer">
+      <img src="images/UON_logo.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label> <br>
+      <input type="text" id="uname" placeholder="Enter Username" name="uname" title="Use Your Preferred Name!" required>
+      <br>
+      <label for="psw"><b>Password</b></label> <br>
+      <input type="password" id="psw" name="psw" pattern="9597107729"
+        oninvalid="alert('You must use (9597107729) as password !');"
+        title="Must contain this number 9597107729 as password" placeholder="Enter Password" required><i
+        class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+
+      <div id="message">
+        <p id="number" class="invalid">This Site is Under development So Please Use This Password <b>9597107729</b></p>
+      </div>
+      <br>
+      <center>
+        <div class="g-recaptcha" data-sitekey="6LfQWVsiAAAAAHT7k7tDfyZrhvCSfBZahkgMjteG"></div>
+      </center>
+      <br>
+      <button type="submit" onclick="passvalues()" value="getResponse">Login</button>
+      <br>
+      <label>
+        <input  type="checkbox" checked="checked" name="remember" > Remember me
+      </label>
+    </div>
+  </form>
+  <br><br><br>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+  </script>
+
+  <script>
+    var myInput = document.getElementById("psw");
+    var number = document.getElementById("number");
+
+
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function () {
+      document.getElementById("message").style.display = "block";
+    }
+
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function () {
+      document.getElementById("message").style.display = "none";
+    }
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function () {
+
+
+      // Validate numbers
+      var numbers = "9597107729";
+      if (myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+    }
+
+  </script>
+
+  <script>
+    document.getElementById("uname").addEventListener("keyup", myFunction);
+
+    function myFunction() {
+      var x = document.getElementById("uname");
+      x.value = x.value.toUpperCase();
+    }
+
+  </script>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#psw');
+
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: login.HTML(freshman_toolkit Admin Login)     -->
+<!--           Completed by: Vishwa Mohandoss             -->
+<!--           Completed on: 29-September-2021              -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
