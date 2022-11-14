@@ -1,0 +1,328 @@
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: contact.HTML(freshman toolkit Contact)   -->
+<!--       Created by: Vishwa Mohandoss           -->
+<!--       Created on: 18-September-2021            -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title> freshman toolkit Contact </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://freshman.z13.web.core.windows.net/uonicon.ico">
+
+<body>
+
+  <style>
+    body {
+      background-color: white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+
+    
+  </style>
+
+  <div class="navbar">
+    <a href="index.html"><img src="images/BG/UON_LG.jpg" style="width:60px;height:40px;"></a>
+    <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="campus_life.html"><i class="fas fa-cloud"></i>CAMPUS LIFE</a>
+    <a class="active" href="freshie_guide.html"><i class="fa fa-fw fa-envelope"></i> FRESHIE GUIDE</a>
+    <a href="Contact_us.html"><i class="fa fa-comments-o"></i> Contact US </a>
+    <a href="Clubs.html"><i class="fa fa-gratipay"></i> Community & Clubs </a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Admin Login</a>
+    <!-- start clock part here... -->
+
+    <div style="text-align: right;">
+
+      <head>
+        <span>
+      </head>
+
+      <body onload="initClock()">
+
+        <!--digital clock start-->
+        <div class="datetime">
+          <div class="date">
+            <span id="dayname">Day</span>,
+            <span id="month">Month</span>
+            <span id="daynum">00</span>,
+            <span id="year">Year</span>
+          </div>
+          <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+          </div>
+        </div>
+        <!--digital clock end-->
+
+        <script type="text/javascript">
+          function updateClock() {
+            var now = new Date();
+            var dname = now.getDay(),
+              mo = now.getMonth(),
+              dnum = now.getDate(),
+              yr = now.getFullYear(),
+              hou = now.getHours(),
+              min = now.getMinutes(),
+              sec = now.getSeconds(),
+              pe = "AM";
+
+            if (hou >= 12) {
+              pe = "PM";
+            }
+            if (hou == 0) {
+              hou = 12;
+            }
+            if (hou > 12) {
+              hou = hou - 12;
+            }
+
+            Number.prototype.pad = function (digits) {
+              for (var n = this.toString(); n.length < digits; n = 0 + n);
+              return n;
+            }
+
+            var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "September", "November", "December"];
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+            var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+            for (var i = 0; i < ids.length; i++)
+              document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+          }
+
+          function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1000);
+          }
+        </script>
+    </div>
+  </div>
+
+</body>
+</head>
+
+<body>
+  <h3> Respectable <b><span id="result"></span></b> !!! </h3>
+  <h1> freshman toolkit</h1>
+  <script>
+    document.getElementById("result").innerHTML = localStorage.getItem("textvalue");
+  </script>
+
+  <div>
+    <ul>
+      <li style="display: inline-block;">
+        <div id="rcorners3">
+          <h3>FRESHIE GUIDE</h3>
+          <p>FRESHMAN TOOLKIT - The Checklist to help you get information about your class at UON! <a
+              href="contact.html">
+              <button class="btn btn-primary btn-lg" style="background-color: white;">Learn More</button>
+            </a> </p>
+        </div>
+      </li><br><br><br>
+      <li style="display: inline-block;">
+        <div id="rcorners3">
+          <p>Look through your personal email for your UON student ID, student email and other login details!</p>
+        </div>
+      </li><br><br><br>
+      <li style="display: inline-block;">
+        <div id="rcorners3">
+          <p>Look through your personal email for your UON student ID, student email and other login details!</p>
+        </div>
+      </li><br><br><br>
+      <li style="display: inline-block;">
+        <div id="rcorners3">
+          <p>Look through your personal email for your UON student ID, student email and other login details!</p>
+        </div>
+      </li><br><br><br>
+      <li style="display: inline-block;">
+        <div id="rcorners3">
+          <p>Look through your personal email for your UON student ID, student email and other login details!</p>
+        </div>
+      </li><br><br><br>
+      <li style="display: inline-block;">
+        <div id="rcorners3">
+          <p>Submit a Request for your Student ID card online! (Don't forget to collect it later)</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <div style="background-color: #c9ecec;">
+    <h3>Students Testimonies Video !</h3>
+    <ul>
+      <li style="display: inline-block;"><iframe width="560" height="315" src="//" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <li style="display: inline-block;"> <iframe width="560" height="315"
+          src="//" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </li>
+    </ul>
+  </div>
+
+  <h3>Academic Helpdesk</h3>
+  <div style="color: #943387; size: 12ch;" id="academicl">
+   
+    </style>
+    <ul>
+      <li>
+        <a href="https://books.newcastle.edu.au/patroninfo" ><i class="fa fa-comments-o"></i> Library </a>
+      </li><br><br><br>
+      <li>
+        <a href="https://www.newcastle.edu.au/current-students/support/academic/workshops-consultations-advisors/peer-assisted-study-sessions" ><i class="fa fa-comments-o"></i> Peer assisted study sessions (PASS)</a>
+      </li><br><br><br>
+      <li>
+        <a href="https://community.canvaslms.com/t5/Canvas-Student/ct-p/canvas_student" ><i class="fa fa-comments-o"></i> Canvas Helpdesk </a>
+      </li><br><br><br>
+      <li>
+        <a href="https://www.newcastle.edu.au/current-students/support/it/it-service-desk"><i class="fa fa-comments-o"></i> IT Service Desk </a>
+      </li><br><br><br>
+      <li>
+        <a href="https://www.newcastle.edu.au/current-students/support/personal" ><i class="fa fa-comments-o"></i> Personal support </a>
+      </li><br><br><br>
+      <li>
+        <a href="https://www.psb-academy.edu.sg/student-resources#student-services" ><i class="fa fa-comments-o"></i> Student Benefits </a>
+      </li><br><br><br>
+      <li>
+        <a href="https://www.newcastle.edu.au/current-students/support/personal/financial-wellbeing" ><i class="fa fa-comments-o"></i> Financial wellbeing </a>
+      </li><br><br><br>
+      <li>
+        <a href="https://askuon.newcastle.edu.au/app/hot_topics"><i class="fa fa-comments-o"></i> ASK UON </a>
+      </li>
+      <li>
+        <a href="https://linktr.ee/scspsbsc?utm_source=qr_code"><i class="fa fa-comments-o"></i> scspsbsc </a>
+      </li><br><br><br>
+    </ul>
+  </div>
+
+  <h2> We welcome your comments, suggestions and questions: </h2>
+  <p><a class="ref_email">Address :</a> UON IT team, <br>123 Prize Lane, Kirwan, SG</p>
+  <p><a class="ref_email">mail : </a> UONITteam@gamil.com</p>
+  <p><a class="ref_email">Contacts: </a> 0455 4343 555</p>
+
+
+
+  <br>
+  <h5><b>
+      <center> THIS SITE IS LINKED WITH GOOGLE RECAPTCHA AND GOOGLE ANALYTICS... &#128512;<br> SIR IF YOU WANT OUR
+        ANALYTICS INFORMATION THEN SEND EMAIL <br> <a
+          href="mailto:vishwamohandoss0@gmail.com">VISHWAMOHANDOSS0@GMAIL.COM</a> </center>
+    </b></h5>
+  <br>
+  <hr>
+  <h4><b>
+      <center> I AM TRYING TO IMPROVE THIS SITE AS SOON AS POSSIBLE ... <br> I HOPE THIS IS GOOD EXPERIENCE TO
+        YOU...<br> THANKS FOR VISITING AS... <br> BY VISHWA MOHANDOSS
+    </b> </center>
+  </h4>
+  <hr>
+  <br>
+  <img src="images/programming.gif" alt="Computer man" style="width:150px;height: 150px;">
+  </b>
+
+</body>
+
+<body>
+
+  <div class="footer">
+    <div>
+      <ul>
+        <li style="display: inline-block;">
+          <h4> Contact</h4>
+          <p style="color:white;">
+            Newcastle Australia IHE100<br>
+            Victoria Street#13-01/02<br>
+            National Library Building<br>
+            Singapore 188064<br>
+            <a style="color: lightblue;" ;href="+65 6221 3306">+65 6221 3306</a>
+
+            <br>
+          </p>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li style="display: inline-block;">
+          <h4>Reach Us</h4>
+
+          <body>
+            <form>
+              <input type="hidden">
+              <div>
+                <label for="FirstName">Name</label><br>
+                <input type="text" placeholder="Enter Name here" name="FirstName" id="FirstName">
+              </div>
+              <div>
+                <label for="email address"> Email ID</label><br>
+                <input type="text" name="email address" placeholder="Enter email address" id="email address">
+              </div>
+              <div>
+                <label for="query"> Message </label><br>
+                <input type="text" style=" height: 50px;" name="query" id="query"
+                  placeholder="Enter your query here...">
+              </div>
+              <div><button style="background-color: Orange;" id="submitForm">Submit </button>
+            </form>
+            <script>
+              $("#submitForm").click(function () {
+                alert("The Form has been Submitted.");
+              });
+              // Get the button
+              let mybutton = document.getElementById("myBtn");
+
+              // When the user scrolls down 20px from the top of the document, show the button
+              window.onscroll = function () { scrollFunction() };
+
+              function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  mybutton.style.display = "block";
+                } else {
+                  mybutton.style.display = "none";
+                }
+              }
+
+              // When the user clicks on the button, scroll to the top of the document
+              function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+              }
+            </script>
+    </div>
+</body>
+</li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <li style="display: inline-block;">
+  <h4> Campus Location</h4>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31910.47095399324!2d103.82530736715651!3d1.2888811398348294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da197f38ae8cad%3A0xf0cc7e9c37d34d23!2sPSB%20Academy%20City%20Campus%3A%20Main%20Wing!5e0!3m2!1sen!2ssg!4v1666895650891!5m2!1sen!2ssg"
+    width="850" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</li>
+</ul>
+</div>
+<p style="color:white;  text-align: right;">
+  <a style="color: lightblue;" ; href="https://policies.newcastle.edu.au/document/view-current.php?id=187"> Copyright
+    2022 &copy; Dreams Designers </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a style="color: lightblue;" ; href="https://policies.newcastle.edu.au/document/view-current.php?id=94"> PRIVACY AND
+    POLICY </a>
+</p>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top <i class='fas fa-arrow-alt-circle-up'></i></button>
+
+</html>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: contact.HTML(freshman toolkit Contact)   -->
+<!--        Completed by: Vishwa Mohandoss        -->
+<!--        Completed on: 29-September-2021         -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->

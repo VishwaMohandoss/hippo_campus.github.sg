@@ -1,0 +1,429 @@
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: Contact_us.HTML(for get Contact_us)   -->
+<!--            Created by: Vishwa Mohandoss      -->
+<!--            Created on: 22-September-2021       -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title> freshman toolkit Contact_us </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://freshman.z13.web.core.windows.net/uonicon.ico">
+
+<body>
+
+
+
+  <!-- document-level style strated -->
+
+  <style>
+    body {
+      /* background-image: url("images/BG/mybg.jpg"); */
+      background-color: white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+
+    
+    /* Start Cascading Style Sheets part of bgimage */
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    .footer {
+
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #AFEEEE;
+      color: white;
+      text-align: center;
+    }
+
+
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #AFEEEE;
+      padding: 20px;
+    }
+  </style>
+
+  <div class="navbar">
+    <a href="index.html"><img src="images/BG/UON_LG.jpg" style="width:60px;height:40px;"></a>
+    <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="campus_life.html"><i class="fas fa-cloud"></i>CAMPUS LIFE</a>
+    <a href="freshie_guide.html"><i class="fa fa-fw fa-envelope"></i> FRESHIE GUIDE</a>
+    <a class="active" href="Contact_us.html"><i class="fa fa-comments-o"></i> Contact US</a>
+    <a href="Clubs.html"><i class="fa fa-gratipay"></i> Community & Clubs </a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i> Admin Login</a>
+    <!-- start clock part here... -->
+
+    <div style="text-align: right;">
+
+      <head>
+        <span>
+      </head>
+
+      <body onload="initClock()">
+
+        <!--digital clock start-->
+        <div class="datetime">
+          <div class="date">
+            <span id="dayname">Day</span>,
+            <span id="month">Month</span>
+            <span id="daynum">00</span>,
+            <span id="year">Year</span>
+          </div>
+          <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+          </div>
+        </div>
+        <!--digital clock end-->
+
+        <script type="text/javascript">
+          function updateClock() {
+            var now = new Date();
+            var dname = now.getDay(),
+              mo = now.getMonth(),
+              dnum = now.getDate(),
+              yr = now.getFullYear(),
+              hou = now.getHours(),
+              min = now.getMinutes(),
+              sec = now.getSeconds(),
+              pe = "AM";
+
+            if (hou >= 12) {
+              pe = "PM";
+            }
+            if (hou == 0) {
+              hou = 12;
+            }
+            if (hou > 12) {
+              hou = hou - 12;
+            }
+
+            Number.prototype.pad = function (digits) {
+              for (var n = this.toString(); n.length < digits; n = 0 + n);
+              return n;
+            }
+
+            var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "September", "November", "December"];
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+            var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+            for (var i = 0; i < ids.length; i++)
+              document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+          }
+
+          function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1000);
+          }
+        </script>
+    </div>
+  </div>
+
+</body>
+</head>
+
+<body>
+  <h1> freshman toolkit</h1>
+  <style>
+    
+
+    #container {
+      font-size: larger;
+    }
+
+    form div {
+      margin-bottom: 1em;
+    }
+  </style>
+
+  <script>
+    function checkNameGender() {
+      x = document.easyform.FirstName.value
+      y = document.easyform.LastName.value
+      if (x == "") {
+        alert("name is mandatory!");
+        return false;
+      } else if (y == "") {
+        alert("LastName is mandatory");
+        return false;
+      } else {
+        alert("Thank you, " + x, + y);
+        return true;
+      }
+
+      // checkbox for holiday
+      a = document.easyform.holiday[0].checked;
+      b = document.easyform.holiday[1].checked;
+      if ((!a && !b) || ((a && b) || (b && a))) {
+        alert("Please select only one checkbox");
+        return false;
+      }
+
+      //radiobutton for gender
+      a = document.easyform.gender[0].checked;
+      b = document.easyform.gender[1].checked;
+      if ((a == false) && (b == false)) {
+        alert("please choose your gender");
+        return false;
+      } _
+
+    }
+    function check_Email(mail) {
+      var regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+      if (regex.test(mail.emailaddress.value)) {
+        return true;
+        alert("Congrats! This is a valid Email email");
+      }
+      else {
+        alert("This is not a valid email address");
+        return false;
+      }
+    }
+
+
+
+
+  </script>
+
+  </head>
+
+  <script>
+
+    // check For your name
+    function checkNameGender() {
+      x = document.contactform.FirstName.value
+      y = document.contactform.LastName.value
+      z = document.contactform.myemail.value
+      if (x == "") {
+        alert("name is mandatory!");
+        return false;
+      } else if (y == "") {
+        alert("LastName is mandatory");
+        return false;
+      } else {
+        check_Email(z)
+      }
+    }
+    //Validate the Email 
+    function check_Email(z) {
+      var regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+      if (regex.test(z)) {
+        uniqueid();
+      }
+      else {
+        myFunction();
+      }
+    }
+
+    function myFunction() {
+      var r = confirm("This is not a valid email address!\n So click  OK to continue.\n Or click cencle for recheack the email you entered.");
+      if (r == true) {
+        uniqueid();
+      } else {
+
+      }
+
+    }
+
+    function reFunction() {
+      window.location.href = "index.html";
+    }
+
+
+
+    function uniqueid() {
+      // always start with a letter 
+      var idstr = String.fromCharCode(Math.floor((Math.random() * 25) + 65));
+      do {
+        // between numbers and characters (48 is 0 and 90 is Z (42-48 = 90)
+        var ascicode = Math.floor((Math.random() * 42) + 48);
+        if (ascicode < 58 || ascicode > 64) {
+          // exclude all chars between : (58) and @ (64)
+          idstr += String.fromCharCode(ascicode);
+        }
+      } while (idstr.length < 15);
+
+
+      alert("Thanks for contacting us,  " + x + " " + y + " ." + "\n Your unique reference id for future reference is " + idstr + "\n Click ok to continue your browsing...")
+      reFunction();
+    }
+
+
+  </script>
+
+
+  <h3>Contact Form</h3>
+
+  <div class="container">
+    <form name="contactform" method="post" onsubmit="return checkNameGender()">
+      <label for="FirstName">First Name *</label>
+      <input type="text" id="FirstName" name="FirstName" placeholder="Your first name..">
+
+      <label for="LastName">Last Name *</label>
+      <input type="text" id="LastName" name="LastName" placeholder="Your last name..">
+
+      <div>
+        <label for="myemail">Enter email adress* </label><br>
+        <input type="text" name="myemail" id="myemail" placeholder="Your Email address..">
+      </div>
+
+      <div>
+        <label for="previous students">Are you current student or new student?</label><br>
+        <div id="students">
+          <label for="yes">Yes</label>
+          <input type="checkbox" name="students" value="Yes" id="Yes1">
+          <label for="No">No</label>
+          <input type="checkbox" name="students" value="No" id="No1">
+        </div>
+      </div>
+
+      <label for="issue">Select a Issue</label>
+      <select id="issue" name="issue">
+        <option value="Poor Course listings">Poor Course listings</option>
+        <option value="Login issue">Login issue</option>
+        <option value="Update Student Particulars">Update Student Particulars</option>
+        <option value="Class Attendance">Class Attendance</option>
+        <option value="Course related Matter">Course related Matter</option>
+        <option value="Timetable Matters">Timetable Matters</option>
+        <option value="Payment related">Payment related</option>
+        <option value="Others">Others</option>
+
+      </select>
+
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <div><input type="Submit" value="click here to submit" onclick="checkNameGender">
+    </form>
+  </div>
+
+</body>
+
+<body>
+  <hr>
+  <div class="footer">
+    <div>
+      <ul>
+        <li style="display: inline-block;">
+          <h4> Contact</h4>
+          <p style="color:white;">
+            Newcastle Australia IHE100<br>
+            Victoria Street#13-01/02<br>
+            National Library Building<br>
+            Singapore 188064<br>
+            <a style="color: lightblue;" ;href="+65 6221 3306">+65 6221 3306</a>
+
+            <br>
+          </p>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li style="display: inline-block;">
+          <h4>Reach Us</h4>
+
+          <body>
+            <form>
+              <input type="hidden">
+              <div>
+                <label for="FirstName">Name</label><br>
+                <input type="text" placeholder="Enter Name here" name="FirstName" id="FirstName">
+              </div>
+              <div>
+                <label for="email address"> Email ID</label><br>
+                <input type="text" name="email address" placeholder="Enter email address" id="email address">
+              </div>
+              <div>
+                <label for="query"> Message </label><br>
+                <input type="text" style=" height: 50px;" name="query" id="query"
+                  placeholder="Enter your query here...">
+              </div>
+              <div><button style="background-color: Orange;" id="submitForm">Submit </button>
+            </form>
+            <script>
+              $("#submitForm").click(function () {
+                alert("The Form has been Submitted.");
+              });
+              // Get the button
+              let mybutton = document.getElementById("myBtn");
+
+              // When the user scrolls down 20px from the top of the document, show the button
+              window.onscroll = function () { scrollFunction() };
+
+              function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  mybutton.style.display = "block";
+                } else {
+                  mybutton.style.display = "none";
+                }
+              }
+
+              // When the user clicks on the button, scroll to the top of the document
+              function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+              }
+            </script>
+    </div>
+</body>
+</li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <li style="display: inline-block;">
+  <h4> Campus Location</h4>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31910.47095399324!2d103.82530736715651!3d1.2888811398348294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da197f38ae8cad%3A0xf0cc7e9c37d34d23!2sPSB%20Academy%20City%20Campus%3A%20Main%20Wing!5e0!3m2!1sen!2ssg!4v1666895650891!5m2!1sen!2ssg"
+    width="850" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</li>
+</ul>
+</div>
+<p style="color:white;  text-align: right;">
+  <a style="color: lightblue;" ; href="https://policies.newcastle.edu.au/document/view-current.php?id=187"> Copyright
+    2022 &copy; Dreams Designers </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a style="color: lightblue;" ; href="https://policies.newcastle.edu.au/document/view-current.php?id=94"> PRIVACY AND
+    POLICY </a>
+</p>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top <i class='fas fa-arrow-alt-circle-up'></i></button>
+
+</html>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- file name: Contact_us.HTML(for get Contact_us)           -->
+<!--           Completed by: Vishwa Mohandoss             -->
+<!--           Completed on: 29-September-2021              -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
